@@ -25,19 +25,31 @@ The program:
 
 ## Requirements
 
-- C compiler (GCC/Clang)
+- C++ compiler (GCC/Clang with C++17 support)
+- CMake 3.26 or higher
 - Standard C library
 
 ## Compilation
 
+### Using CMake:
+
 ```bash
-gcc -o recover recover.c
+mkdir build
+cd build
+cmake ..
+make
+```
+
+### Manual compilation:
+
+```bash
+g++ -std=c++17 -o recover main.cpp
 ```
 
 Or with debugging symbols:
 
 ```bash
-gcc -ggdb3 -O0 -Wall -Werror -o recover recover.c
+g++ -std=c++17 -ggdb3 -O0 -Wall -Werror -o recover main.cpp
 ```
 
 ## Usage
@@ -138,8 +150,9 @@ $ ls -lh *.jpg
 
 ```
 .
-├── recover.c     # Main program source
-└── README.md     # Documentation
+├── main.cpp          # Main program source
+├── CMakeLists.txt    # CMake configuration
+└── README.md         # Documentation
 ```
 
 ## Important Notes
